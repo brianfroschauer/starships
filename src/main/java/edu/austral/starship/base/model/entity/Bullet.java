@@ -11,7 +11,7 @@ import java.awt.geom.Rectangle2D;
  * Author: brianfroschauer
  * Date: 27/10/2018
  */
-public class Bullet extends Entity<Bullet> {
+public class Bullet extends Entity<Bullet> implements Harmful {
 
     private Shooter shooter;
     private boolean dead = false;
@@ -34,7 +34,7 @@ public class Bullet extends Entity<Bullet> {
 
     @Override
     public void collisionedWithAsteroid(Asteroid asteroid) {
-        shooter.addScore(10);
+        shooter.addScore(Constants.SHOOT_SCORE);
         dead = true;
     }
 
@@ -50,6 +50,16 @@ public class Bullet extends Entity<Bullet> {
     }
 
     @Override
+    public void accept(Visitor visitor) {
+        visitor.visitBullet(this);
+    }
+
+    @Override
+    public int getDamage() {
+        return Constants.BULLET_DAMAGE;
+    }
+
+    @Override
     public boolean isDead() {
         final int w = Constants.GAME_WIDTH;
         final int h = Constants.GAME_HEIGHT;
@@ -58,10 +68,5 @@ public class Bullet extends Entity<Bullet> {
                 position.y() < 0 ||
                 position.y() > h ||
                 dead);
-    }
-
-    @Override
-    public void accept(Visitor visitor) {
-        visitor.visitBullet(this);
     }
 }

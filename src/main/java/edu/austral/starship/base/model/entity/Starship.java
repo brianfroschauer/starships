@@ -17,7 +17,7 @@ import java.util.Queue;
  * Author: brianfroschauer
  * Date: 25/10/2018
  */
-public class Starship extends Entity<Starship> implements Observable {
+public class Starship extends Entity<Starship> implements Observable, Harmful {
 
     private final List<Observer> observers;
     private final Queue<Weapon> weapons;
@@ -46,17 +46,17 @@ public class Starship extends Entity<Starship> implements Observable {
 
     @Override
     public void collisionedWithStarship(Starship starship) {
-        life -= 1;
+        life -= starship.getDamage();
     }
 
     @Override
     public void collisionedWithAsteroid(Asteroid asteroid) {
-        life -= 2;
+        life -= asteroid.getDamage();
     }
 
     @Override
     public void collisionedWithBullet(Bullet bullet) {
-        life -= 3;
+        life -= bullet.getDamage();
     }
 
     @Override
@@ -67,13 +67,18 @@ public class Starship extends Entity<Starship> implements Observable {
     }
 
     @Override
-    public boolean isDead() {
-        return life <= 0;
+    public void accept(Visitor visitor) {
+        visitor.visitStarship(this);
     }
 
     @Override
-    public void accept(Visitor visitor) {
-        visitor.visitStarship(this);
+    public int getDamage() {
+        return Constants.STARSHIP_DAMAGE;
+    }
+
+    @Override
+    public boolean isDead() {
+        return life <= 0;
     }
 
     void changeWeapon() {

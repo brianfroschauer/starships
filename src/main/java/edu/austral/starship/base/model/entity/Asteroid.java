@@ -11,7 +11,7 @@ import java.awt.geom.Ellipse2D;
  * Author: brianfroschauer
  * Date: 27/10/2018
  */
-public class Asteroid extends Entity<Asteroid> {
+public class Asteroid extends Entity<Asteroid> implements Harmful {
 
     private int life;
 
@@ -43,7 +43,7 @@ public class Asteroid extends Entity<Asteroid> {
 
     @Override
     public void collisionedWithBullet(Bullet bullet) {
-        life -= 5;
+        life -= bullet.getDamage();
     }
 
     @Override
@@ -54,12 +54,17 @@ public class Asteroid extends Entity<Asteroid> {
     }
 
     @Override
-    public boolean isDead() {
-        return life <= 0;
+    public void accept(Visitor visitor) {
+        visitor.visitAsteroid(this);
     }
 
     @Override
-    public void accept(Visitor visitor) {
-        visitor.visitAsteroid(this);
+    public int getDamage() {
+        return Constants.ASTEROID_DAMAGE;
+    }
+
+    @Override
+    public boolean isDead() {
+        return life <= 0;
     }
 }
