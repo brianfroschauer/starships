@@ -16,18 +16,20 @@ public class Constants {
 
     public static final int GAME_WIDTH = 1400;
     public static final int GAME_HEIGHT = 700;
-
     public static final int STARSHIP_WIDTH = 50;
     public static final int STARSHIP_HEIGHT = 50;
-
     public static final int ASTEROID_WIDTH = 80;
     public static final int ASTEROID_HEIGHT = 80;
-
     public static final int BULLET_WIDTH = 20;
     public static final int BULLET_HEIGHT = 30;
-
     public static final int AMMO_WIDTH = 50;
     public static final int AMMO_HEIGHT = 50;
+
+    public static final int STARSHIP_DAMAGE = 1;
+    public static final int ASTEROID_DAMAGE = 3;
+    public static final int BULLET_DAMAGE = 2;
+
+    public static final int SHOOT_SCORE = 10;
 
     public static final float GRAVITY = 0.005F;
 }
