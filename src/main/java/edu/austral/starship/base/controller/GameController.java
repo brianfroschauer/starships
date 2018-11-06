@@ -6,6 +6,7 @@ import edu.austral.starship.base.model.entity.*;
 import edu.austral.starship.base.model.factory.AmmoFactory;
 import edu.austral.starship.base.model.factory.AsteroidFactory;
 import edu.austral.starship.base.model.factory.StarshipFactory;
+import edu.austral.starship.base.model.factory.WeaponUpgradeFactory;
 import edu.austral.starship.base.model.observable.Observer;
 import edu.austral.starship.base.util.keyMap.KeyMap1;
 import edu.austral.starship.base.util.keyMap.KeyMap2;
@@ -51,9 +52,15 @@ public class GameController implements Observer {
 
     public void update(float timeSinceLastDraw) {
         gameModel.update(timeSinceLastDraw);
+        removeDeadEntities();
+        spawnWeaponUpgrade();
+        spawnAmmo();
+    }
+
+    private void removeDeadEntities() {
         gameModel.removeDeadModels();
         gameView.removeDeadModels();
-        spawnAmmo();
+        players.removeIf(player -> player.getStarship().isDead());
     }
 
     private void setupAsteroids() {
@@ -68,8 +75,8 @@ public class GameController implements Observer {
 
         final Starship starship1 = new StarshipFactory().build();
         final Starship starship2 = new StarshipFactory().build();
-        final Player player1 = new Player("Micaela", starship1, new KeyMap1().getKeyMap());
-        final Player player2 = new Player("Brian", starship2, new KeyMap2().getKeyMap());
+        final Player player1 = new Player("Player1", starship1, new KeyMap1().getKeyMap());
+        final Player player2 = new Player("Player2", starship2, new KeyMap2().getKeyMap());
 
         starships.add(starship1);
         starships.add(starship2);
@@ -96,10 +103,18 @@ public class GameController implements Observer {
         }
     }
 
+    private void spawnWeaponUpgrade() {
+        final int probability = new Random().nextInt(10000);
+        if (probability < 5) {
+            WeaponUpgrade weaponUpgrade = new WeaponUpgradeFactory().build();
+            gameModel.add(weaponUpgrade);
+            gameView.createWeaponUpgrade(weaponUpgrade);
+        }
+    }
+
     @Override
     public void update(List<Bullet> bullets) {
         gameModel.addAll(bullets);
         gameView.createBullet(bullets);
-
     }
 }

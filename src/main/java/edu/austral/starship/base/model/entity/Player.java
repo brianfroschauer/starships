@@ -6,7 +6,7 @@ import edu.austral.starship.base.controller.command.KeyMap;
  * Author: brianfroschauer
  * Date: 25/10/2018
  */
-public class Player implements Shooter {
+public class Player {
 
     private final String name;
     private final Starship starship;
@@ -17,15 +17,13 @@ public class Player implements Shooter {
         this.name = name;
         this.starship = starship;
         this.keyMap = keyMap;
-        this. score = 0;
+        this.score = 0;
     }
 
-    @Override
     public int getScore() {
         return score;
     }
 
-    @Override
     public void addScore(int score) {
         this.score += score;
     }
@@ -44,10 +42,6 @@ public class Player implements Shooter {
 
     public void shoot() {
         starship.shoot(this);
-    }
-
-    public void changeWeapon() {
-        starship.changeWeapon();
     }
 
     public void accelerate() {

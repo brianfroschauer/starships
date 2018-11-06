@@ -22,6 +22,7 @@ public class GameView {
     private PImage asteroidImage;
     private PImage bulletImage;
     private PImage ammoImage;
+    private PImage weaponImage;
 
     public GameView() {
         views = new ArrayList<>();
@@ -33,12 +34,14 @@ public class GameView {
         asteroidImage = imageLoader.load(Constants.ASTEROID_IMAGE);
         bulletImage = imageLoader.load(Constants.BULLET_IMAGE);
         ammoImage = imageLoader.load(Constants.AMMO_IMAGE);
+        weaponImage = imageLoader.load(Constants.WEAPON_UPGRADE_IMAGE);
 
         background.resize(Constants.GAME_WIDTH, Constants.GAME_HEIGHT);
         starshipImage.resize(Constants.STARSHIP_WIDTH, Constants.STARSHIP_HEIGHT);
         asteroidImage.resize(Constants.ASTEROID_WIDTH, Constants.ASTEROID_HEIGHT);
         bulletImage.resize(Constants.BULLET_WIDTH, Constants.BULLET_HEIGHT);
         ammoImage.resize(Constants.AMMO_WIDTH, Constants.AMMO_HEIGHT);
+        weaponImage.resize(Constants.WEAPON_UPGRADE_WIDTH, Constants.WEAPON_UPGRADE_HEIGHT);
     }
 
     public void draw(PGraphics graphics) {
@@ -60,6 +63,10 @@ public class GameView {
 
     public void createAmmo(Ammo ammo) {
         views.add(new AmmoView(ammo, ammoImage));
+    }
+
+    public void createWeaponUpgrade(WeaponUpgrade weaponUpgrade) {
+        views.add(new WeaponUpgradeView(weaponUpgrade, weaponImage));
     }
 
     public void removeDeadModels() {

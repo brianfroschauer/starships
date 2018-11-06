@@ -16,7 +16,6 @@ public class KeyMap2 {
         keyMap.put(KeyEvent.VK_1, new RotateLeft());
         keyMap.put(KeyEvent.VK_3, new RotateRight());
         keyMap.put(KeyEvent.VK_4, new Shoot());
-        keyMap.put(KeyEvent.VK_E, new ChangeWeapon());
         return keyMap;
     }
 }

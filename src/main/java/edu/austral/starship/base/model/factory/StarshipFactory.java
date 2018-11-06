@@ -33,11 +33,15 @@ public class StarshipFactory implements Factory<Starship> {
         final Vector2 position = Random.getVector(0, Constants.GAME_WIDTH, Constants.GAME_HEIGHT / 2, Constants.GAME_HEIGHT);
         final Vector2 direction = new Vector2(0, -1);
         final float speed = 3f;
+
+        /* Make weapon upgrade
         final SingleWeapon singleWeapon = new SingleWeapon();
         final DoubleWeapon doubleWeapon = new DoubleWeapon();
         final Queue<Weapon> weapons = new ConcurrentLinkedQueue<>();
         weapons.add(singleWeapon);
         weapons.add(doubleWeapon);
-        return new Starship(position, direction, speed, 800, weapons);
+        */
+
+        return new Starship(position, direction, speed, 500);
     }
 }

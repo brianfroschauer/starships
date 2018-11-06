@@ -9,17 +9,18 @@ import java.util.Optional;
  */
 public abstract class Weapon {
 
-    int ammo = 100;
+    int ammo;
 
-    Optional<List<Bullet>> shoot(Shooter shooter, Starship starship) {
-        if (hasAmmo()) {
-            List<Bullet> bullets = relativeShoot(shooter, starship);
-            return Optional.ofNullable(bullets);
-        }
+    Weapon() {
+        ammo = 100;
+    }
+
+    Optional<List<Bullet>> shoot(Player player) {
+        if (hasAmmo()) return Optional.of(relativeShoot(player));
         return Optional.empty();
     }
 
-    abstract List<Bullet> relativeShoot(Shooter shooter, Starship starship);
+    abstract List<Bullet> relativeShoot(Player player);
 
     abstract boolean hasAmmo();
 

@@ -11,14 +11,14 @@ import java.awt.geom.Rectangle2D;
  * Author: brianfroschauer
  * Date: 27/10/2018
  */
-public class Bullet extends Entity<Bullet> implements Harmful {
+public class Bullet extends Entity implements Harmful {
 
-    private Shooter shooter;
+    private final Player player;
     private boolean dead = false;
 
-    public Bullet(Vector2 position, Vector2 direction, float speed, Shooter shooter) {
+    public Bullet(Vector2 position, Vector2 direction, float speed, Player player) {
         super(position, direction, speed);
-        this.shooter = shooter;
+        this.player = player;
     }
 
     @Override
@@ -34,12 +34,17 @@ public class Bullet extends Entity<Bullet> implements Harmful {
 
     @Override
     public void collisionedWithAsteroid(Asteroid asteroid) {
-        shooter.addScore(Constants.SHOOT_SCORE);
+        player.addScore(Constants.SHOOT_SCORE);
         dead = true;
     }
 
     @Override
     public void collisionedWithBullet(Bullet bullet) {
+
+    }
+
+    @Override
+    public void collisionedWithWeaponUpgrade(WeaponUpgrade weaponUpgrade) {
 
     }
 

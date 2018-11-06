@@ -8,34 +8,23 @@ import edu.austral.starship.base.model.visitor.Visitor;
 
 import java.awt.*;
 import java.awt.geom.Rectangle2D;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.Queue;
 
 /**
  * Author: brianfroschauer
  * Date: 25/10/2018
  */
-public class Starship extends Entity<Starship> implements Observable, Harmful {
+public class Starship extends Entity implements Observable, Harmful {
 
-    private final List<Observer> observers;
-    private final Queue<Weapon> weapons;
+    private Observer observer;
+    private Weapon weapon;
     private int life;
 
-    public Starship(Vector2 position, Vector2 direction, float speed, int life, Queue<Weapon> weapons) {
+    public Starship(Vector2 position, Vector2 direction, float speed, int life) {
         super(position, direction, speed);
-        this.observers = new ArrayList<>();
-        this.weapons = weapons;
+        this.weapon = new SingleWeapon();
         this.life = life;
-    }
-
-    public Weapon getWeapon() {
-        return weapons.peek();
-    }
-
-    public int getLife() {
-        return life;
     }
 
     @Override
@@ -60,6 +49,11 @@ public class Starship extends Entity<Starship> implements Observable, Harmful {
     }
 
     @Override
+    public void collisionedWithWeaponUpgrade(WeaponUpgrade weaponUpgrade) {
+
+    }
+
+    @Override
     public void update(float timeSinceLastDraw) {
         final float distance = timeSinceLastDraw * Constants.GRAVITY;
         position = position.add(direction.multiply(distance));
@@ -81,37 +75,42 @@ public class Starship extends Entity<Starship> implements Observable, Harmful {
         return life <= 0;
     }
 
-    void changeWeapon() {
-        weapons.add(weapons.poll());
+    public Weapon getWeapon() {
+        return weapon;
     }
 
-    void shoot(Shooter shooter) {
-        if (!weapons.isEmpty()) {
-            Optional<List<Bullet>> shoot = weapons.peek().shoot(shooter, this);
-            shoot.ifPresent(this::notifyObservers);
-        }
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 
-    void accelerate() {
+    public int getLife() {
+        return life;
+    }
+
+    public void setLife(int life) {
+        this.life = life;
+    }
+
+    public void shoot(Player player) {
+        final Optional<List<Bullet>> shoots = weapon.shoot(player);
+        shoots.ifPresent(this::notifyObservers);
+    }
+
+    public void accelerate() {
         position = position.add(direction.multiply(speed));
     }
 
-    void rotate(float angle) {
+    public void rotate(float angle) {
         direction = direction.rotate(angle);
     }
 
     @Override
     public void addObserver(Observer observer) {
-        observers.add(observer);
-    }
-
-    @Override
-    public void removeObserver(Observer observer) {
-        observers.remove(observer);
+        this.observer = observer;
     }
 
     @Override
     public void notifyObservers(List<Bullet> bullets) {
-        observers.forEach(observer -> observer.update(bullets));
+        observer.update(bullets);
     }
 }

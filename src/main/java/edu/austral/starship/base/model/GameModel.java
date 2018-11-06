@@ -13,7 +13,7 @@ import java.util.List;
 public class GameModel {
 
     private final List<Entity> entities;
-    private final CollisionEngine collisionEngine;
+    private final CollisionEngine<Entity> collisionEngine;
 
     public GameModel() {
         this.entities = new ArrayList<>();
@@ -29,7 +29,7 @@ public class GameModel {
         this.entities.addAll(entities);
     }
 
-    public void add(Entity<? extends Entity> entity) {
+    public void add(Entity entity) {
         this.entities.add(entity);
     }
 

@@ -9,27 +9,25 @@ import java.awt.geom.Rectangle2D;
 
 /**
  * Author: brianfroschauer
- * Date: 03/11/2018
+ * Date: 06/11/2018
  */
-public class Ammo extends Entity {
+public class WeaponUpgrade extends Entity {
 
-    private int ammo;
     private boolean dead = false;
 
-    public Ammo(Vector2 position, Vector2 direction, float speed, int ammo) {
+    public WeaponUpgrade(Vector2 position, Vector2 direction, float speed) {
         super(position, direction, speed);
-        this.ammo = ammo;
     }
 
     @Override
     protected Shape getRelativeShape() {
         return new Rectangle2D.Float(position.x(), position.y(),
-                Constants.AMMO_WIDTH, Constants.AMMO_HEIGHT);
+                Constants.WEAPON_UPGRADE_WIDTH, Constants.WEAPON_UPGRADE_HEIGHT);
     }
 
     @Override
     public void collisionedWithStarship(Starship starship) {
-        starship.getWeapon().reload(ammo);
+        starship.setWeapon(new DoubleWeapon());
         dead = true;
     }
 
@@ -50,7 +48,9 @@ public class Ammo extends Entity {
 
     @Override
     public void update(float timeSinceLastDraw) {
-
+        final float distance = timeSinceLastDraw * (Constants.GRAVITY + speed);
+        position = position.add(direction.multiply(distance));
+        checkBounds();
     }
 
     @Override
@@ -60,6 +60,6 @@ public class Ammo extends Entity {
 
     @Override
     public void accept(Visitor visitor) {
-
+        visitor.visitWeaponUpgrade(this);
     }
 }

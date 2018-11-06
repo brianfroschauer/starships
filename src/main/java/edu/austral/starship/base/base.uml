@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>edu.austral.starship.base</OriginalElement>
+  <nodes>
+    <node x="1375.0" y="1767.0">edu.austral.starship.base.framework.ImageLoader</node>
+    <node x="2956.0" y="1164.0">edu.austral.starship.base.model.GameModel</node>
+    <node x="300.0" y="224.5">edu.austral.starship.base.collision.CollisionEngine</node>
+    <node x="1028.0" y="1164.0">edu.austral.starship.base.framework.GameFramework</node>
+    <node x="1657.0" y="1377.0">edu.austral.starship.base.model.entity.SingleWeapon</node>
+    <node x="343.5" y="1164.0">edu.austral.starship.base.model.observable.Observer</node>
+    <node x="2058.25" y="1022.0">edu.austral.starship.base.view.StarshipView</node>
+    <node x="2347.25" y="1033.5">edu.austral.starship.base.view.AmmoView</node>
+    <node x="3355.25" y="676.5">edu.austral.starship.base.model.visitor.CollisionVisitor</node>
+    <node x="1820.25" y="1034.0">edu.austral.starship.base.model.factory.AsteroidFactory</node>
+    <node x="71.66666666666652" y="544.0">edu.austral.starship.base.model.entity.Starship</node>
+    <node x="1928.375" y="11.5">edu.austral.starship.base.model.visitor.Visitable</node>
+    <node x="1979.0" y="1767.0">edu.austral.starship.base.util.keyMap.KeyMap3</node>
+    <node x="2176.0" y="1767.0">edu.austral.starship.base.util.keyMap.KeyMap2</node>
+    <node x="2373.0" y="1767.0">edu.austral.starship.base.util.keyMap.KeyMap1</node>
+    <node x="2268.0" y="1164.0">edu.austral.starship.base.model.entity.Player</node>
+    <node x="2585.0" y="1164.0">edu.austral.starship.base.framework.WindowSettings</node>
+    <node x="2636.25" y="1033.5">edu.austral.starship.base.view.AsteroidView</node>
+    <node x="0.0" y="1868.0">edu.austral.starship.base.controller.command.RotateRight</node>
+    <node x="639.0" y="1868.0">edu.austral.starship.base.controller.command.RotateLeft</node>
+    <node x="1792.0" y="1164.0">edu.austral.starship.base.model.entity.Weapon</node>
+    <node x="877.0" y="1767.0">edu.austral.starship.base.model.entity.EntityType</node>
+    <node x="1715.375" y="124.0">edu.austral.starship.base.model.entity.Entity</node>
+    <node x="2925.25" y="1033.5">edu.austral.starship.base.view.WeaponUpgradeView</node>
+    <node x="2636.25" y="687.0">edu.austral.starship.base.view.View</node>
+    <node x="1449.5" y="721.5">edu.austral.starship.base.model.factory.Factory</node>
+    <node x="1654.0" y="1767.0">edu.austral.starship.base.util.random.Random</node>
+    <node x="629.0" y="1164.0">edu.austral.starship.base.view.GameView</node>
+    <node x="327.0" y="1265.0">edu.austral.starship.base.controller.GameController</node>
+    <node x="0.0" y="257.5">edu.austral.starship.base.model.observable.Observable</node>
+    <node x="1904.2972222222224" y="632.0">edu.austral.starship.base.model.entity.Ammo</node>
+    <node x="632.0" y="268.5">edu.austral.starship.base.model.entity.Harmful</node>
+    <node x="426.0" y="1868.0">edu.austral.starship.base.controller.command.Accelerate</node>
+    <node x="3440.5" y="235.5">edu.austral.starship.base.model.visitor.Visitor</node>
+    <node x="319.5" y="1767.0">edu.austral.starship.base.controller.command.Command</node>
+    <node x="3316.25" y="1033.5">edu.austral.starship.base.view.BulletView</node>
+    <node x="1068.25" y="1034.0">edu.austral.starship.base.model.factory.StarshipFactory</node>
+    <node x="1019.5" y="621.5">edu.austral.starship.base.model.entity.Asteroid</node>
+    <node x="1305.25" y="1034.0">edu.austral.starship.base.model.factory.AmmoFactory</node>
+    <node x="589.5" y="610.0">edu.austral.starship.base.model.entity.Bullet</node>
+    <node x="1028.0" y="1331.0">edu.austral.starship.base.framework.StarshipGame</node>
+    <node x="2925.25" y="643.5">edu.austral.starship.base.model.entity.WeaponUpgrade</node>
+    <node x="1530.25" y="1034.0">edu.austral.starship.base.model.factory.WeaponUpgradeFactory</node>
+    <node x="1403.0" y="1164.0">edu.austral.starship.base.util.vector.Vector2</node>
+    <node x="403.5" y="0.0">edu.austral.starship.base.collision.Collisionable</node>
+    <node x="1036.0" y="1767.0">edu.austral.starship.base.controller.command.KeyMap</node>
+    <node x="1950.0" y="1377.0">edu.austral.starship.base.model.entity.DoubleWeapon</node>
+    <node x="0.0" y="1164.0">edu.austral.starship.base.util.constants.Constants</node>
+    <node x="3311.0" y="1164.0">edu.austral.starship.base.framework.GameManager</node>
+    <node x="213.0" y="1868.0">edu.austral.starship.base.controller.command.Shoot</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="edu.austral.starship.base.model.entity.Asteroid" target="edu.austral.starship.base.model.entity.Harmful">
+      <point x="-102.5" y="-136.5" />
+      <point x="1122.0" y="484.0" />
+      <point x="732.0" y="484.0" />
+      <point x="40.0" y="25.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.visitor.CollisionVisitor" target="edu.austral.starship.base.model.visitor.Visitor">
+      <point x="85.25" y="-81.5" />
+      <point x="0.0" y="58.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.factory.Factory" target="edu.austral.starship.base.model.entity.Entity">
+      <point x="0.0" y="-36.5" />
+      <point x="1536.5" y="524.0" />
+      <point x="1894.75" y="524.0" />
+      <point x="-25.625" y="170.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.view.AsteroidView" target="edu.austral.starship.base.view.View">
+      <point x="0.0" y="-37.0" />
+      <point x="0.0" y="71.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.entity.WeaponUpgrade" target="edu.austral.starship.base.model.entity.Entity">
+      <point x="0.0" y="-114.5" />
+      <point x="3130.25" y="504.0" />
+      <point x="2048.5" y="504.0" />
+      <point x="128.125" y="170.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.factory.StarshipFactory" target="edu.austral.starship.base.model.factory.Factory">
+      <point x="0.0" y="-36.5" />
+      <point x="1176.75" y="992.0" />
+      <point x="1471.25" y="992.0" />
+      <point x="-65.25" y="36.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.entity.Starship" target="edu.austral.starship.base.model.observable.Observable">
+      <point x="-136.66666666666652" y="-214.0" />
+      <point x="0.0" y="36.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.factory.AsteroidFactory" target="edu.austral.starship.base.model.factory.Factory">
+      <point x="0.0" y="-36.5" />
+      <point x="1929.25" y="992.0" />
+      <point x="1601.75" y="992.0" />
+      <point x="65.25" y="36.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.entity.Bullet" target="edu.austral.starship.base.model.entity.Harmful">
+      <point x="-102.5" y="-148.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.entity.SingleWeapon" target="edu.austral.starship.base.model.entity.Weapon">
+      <point x="0.0" y="-36.5" />
+      <point x="1793.5" y="1352.0" />
+      <point x="1866.0" y="1352.0" />
+      <point x="-74.0" y="81.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.view.StarshipView" target="edu.austral.starship.base.view.View">
+      <point x="0.0" y="-48.5" />
+      <point x="2192.75" y="992.0" />
+      <point x="2663.15" y="992.0" />
+      <point x="-107.60000000000002" y="71.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.entity.Entity" target="edu.austral.starship.base.model.visitor.Visitable">
+      <point x="102.5" y="-170.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.entity.Starship" target="edu.austral.starship.base.model.entity.Harmful">
+      <point x="0.0" y="-214.0" />
+      <point x="276.6666666666665" y="484.0" />
+      <point x="652.0" y="484.0" />
+      <point x="-40.0" y="25.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.visitor.CollisionVisitor" target="edu.austral.starship.base.model.entity.Entity">
+      <point x="-85.25" y="-81.5" />
+      <point x="3440.5" y="494.0" />
+      <point x="2099.75" y="494.0" />
+      <point x="179.375" y="170.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.collision.CollisionEngine" target="edu.austral.starship.base.collision.Collisionable">
+      <point x="0.0" y="-69.5" />
+      <point x="-52.5" y="37.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.entity.Starship" target="edu.austral.starship.base.model.entity.Entity">
+      <point x="136.66666666666652" y="-214.0" />
+      <point x="413.33333333333303" y="494.0" />
+      <point x="1741.0" y="494.0" />
+      <point x="-179.375" y="170.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.controller.command.RotateRight" target="edu.austral.starship.base.controller.command.Command">
+      <point x="0.0" y="-25.5" />
+      <point x="96.5" y="1838.0" />
+      <point x="343.625" y="1838.0" />
+      <point x="-72.375" y="25.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.controller.command.Shoot" target="edu.austral.starship.base.controller.command.Command">
+      <point x="0.0" y="-25.5" />
+      <point x="309.5" y="1848.0" />
+      <point x="391.875" y="1848.0" />
+      <point x="-24.125" y="25.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.entity.Bullet" target="edu.austral.starship.base.model.entity.Entity">
+      <point x="102.5" y="-148.0" />
+      <point x="897.0" y="504.0" />
+      <point x="1792.25" y="504.0" />
+      <point x="-128.125" y="170.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.factory.WeaponUpgradeFactory" target="edu.austral.starship.base.model.factory.Factory">
+      <point x="0.0" y="-36.5" />
+      <point x="1665.25" y="1002.0" />
+      <point x="1558.25" y="1002.0" />
+      <point x="21.75" y="36.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.view.AmmoView" target="edu.austral.starship.base.view.View">
+      <point x="0.0" y="-37.0" />
+      <point x="2481.75" y="1002.0" />
+      <point x="2716.95" y="1002.0" />
+      <point x="-53.799999999999955" y="71.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.view.View" target="edu.austral.starship.base.model.entity.Entity">
+      <point x="0.0" y="-71.0" />
+      <point x="2770.75" y="514.0" />
+      <point x="1997.25" y="514.0" />
+      <point x="76.875" y="170.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.entity.Entity" target="edu.austral.starship.base.collision.Collisionable">
+      <point x="-102.5" y="-170.0" />
+      <point x="1817.875" y="99.0" />
+      <point x="561.0" y="99.0" />
+      <point x="52.5" y="37.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.entity.Ammo" target="edu.austral.starship.base.model.entity.Entity">
+      <point x="0.0" y="-126.0" />
+      <point x="2109.2972222222224" y="524.0" />
+      <point x="1946.0" y="524.0" />
+      <point x="25.625" y="170.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.framework.StarshipGame" target="edu.austral.starship.base.framework.GameFramework">
+      <point x="0.0" y="-81.0" />
+      <point x="0.0" y="58.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.controller.command.RotateLeft" target="edu.austral.starship.base.controller.command.Command">
+      <point x="0.0" y="-25.5" />
+      <point x="735.5" y="1838.0" />
+      <point x="488.375" y="1838.0" />
+      <point x="72.375" y="25.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.entity.Asteroid" target="edu.austral.starship.base.model.entity.Entity">
+      <point x="102.5" y="-136.5" />
+      <point x="1327.0" y="514.0" />
+      <point x="1843.5" y="514.0" />
+      <point x="-76.875" y="170.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.view.BulletView" target="edu.austral.starship.base.view.View">
+      <point x="0.0" y="-37.0" />
+      <point x="3450.75" y="992.0" />
+      <point x="2878.35" y="992.0" />
+      <point x="107.59999999999991" y="71.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.controller.GameController" target="edu.austral.starship.base.model.observable.Observer">
+      <point x="0.0" y="-169.5" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.entity.DoubleWeapon" target="edu.austral.starship.base.model.entity.Weapon">
+      <point x="0.0" y="-36.5" />
+      <point x="2086.5" y="1352.0" />
+      <point x="2014.0" y="1352.0" />
+      <point x="74.0" y="81.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.controller.command.Accelerate" target="edu.austral.starship.base.controller.command.Command">
+      <point x="0.0" y="-25.5" />
+      <point x="522.5" y="1848.0" />
+      <point x="440.125" y="1848.0" />
+      <point x="24.125" y="25.5" />
+    </edge>
+    <edge source="edu.austral.starship.base.view.WeaponUpgradeView" target="edu.austral.starship.base.view.View">
+      <point x="0.0" y="-37.0" />
+      <point x="3110.75" y="1002.0" />
+      <point x="2824.55" y="1002.0" />
+      <point x="53.799999999999955" y="71.0" />
+    </edge>
+    <edge source="edu.austral.starship.base.model.factory.AmmoFactory" target="edu.austral.starship.base.model.factory.Factory">
+      <point x="0.0" y="-36.5" />
+      <point x="1407.75" y="1002.0" />
+      <point x="1514.75" y="1002.0" />
+      <point x="-21.75" y="36.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.7152646516973522" x="855.4685539491784" y="524.5536824386619" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

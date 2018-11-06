@@ -3,7 +3,6 @@ package edu.austral.starship.base.framework;
 import edu.austral.starship.base.controller.GameController;
 import edu.austral.starship.base.util.constants.Constants;
 
-import edu.austral.starship.base.view.ImageRepository;
 import processing.core.PGraphics;
 import processing.event.KeyEvent;
 

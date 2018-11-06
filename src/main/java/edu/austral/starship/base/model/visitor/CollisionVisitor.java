@@ -1,19 +1,16 @@
 package edu.austral.starship.base.model.visitor;
 
-import edu.austral.starship.base.model.entity.Asteroid;
-import edu.austral.starship.base.model.entity.Bullet;
-import edu.austral.starship.base.model.entity.Entity;
-import edu.austral.starship.base.model.entity.Starship;
+import edu.austral.starship.base.model.entity.*;
 
 /**
  * Author: brianfroschauer
  * Date: 26/10/2018
  */
-public class CollisionVisitor implements Visitor {
+public class CollisionVisitor<T extends Entity> implements Visitor {
 
-    private final Entity<?> entity;
+    private final T entity;
 
-    public CollisionVisitor(Entity<?> entity) {
+    public CollisionVisitor(T entity) {
         this.entity = entity;
     }
 
@@ -30,5 +27,10 @@ public class CollisionVisitor implements Visitor {
     @Override
     public void visitBullet(Bullet bullet) {
         entity.collisionedWithBullet(bullet);
+    }
+
+    @Override
+    public void visitWeaponUpgrade(WeaponUpgrade weaponUpgrade) {
+        entity.collisionedWithWeaponUpgrade(weaponUpgrade);
     }
 }

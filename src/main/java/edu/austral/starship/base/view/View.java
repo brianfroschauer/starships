@@ -10,7 +10,7 @@ import processing.core.PImage;
  * Author: brianfroschauer
  * Date: 31/10/2018
  */
-public abstract class View<T extends Entity<T>> {
+public abstract class View<T extends Entity> {
 
     private final T entity;
     private final PImage image;

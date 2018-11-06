@@ -13,7 +13,7 @@ import java.awt.geom.Path2D;
  * Author: brianfroschauer
  * Date: 25/10/2018
  */
-public abstract class Entity<T extends Entity<T>> implements Collisionable<T>, Visitable {
+public abstract class Entity implements Collisionable<Entity>, Visitable {
 
     Vector2 position;
     Vector2 direction;
@@ -43,8 +43,8 @@ public abstract class Entity<T extends Entity<T>> implements Collisionable<T>, V
     protected abstract Shape getRelativeShape();
 
     @Override
-    public void collisionedWith(T collisionable) {
-        collisionable.accept(new CollisionVisitor(this));
+    public void collisionedWith(Entity collisionable) {
+        collisionable.accept(new CollisionVisitor<>(this));
     }
 
     public abstract void collisionedWithStarship(Starship starship);
@@ -52,6 +52,8 @@ public abstract class Entity<T extends Entity<T>> implements Collisionable<T>, V
     public abstract void collisionedWithAsteroid(Asteroid asteroid);
 
     public abstract void collisionedWithBullet(Bullet bullet);
+
+    public abstract void collisionedWithWeaponUpgrade(WeaponUpgrade weaponUpgrade);
 
     public abstract void update(float timeSinceLastDraw);
 
