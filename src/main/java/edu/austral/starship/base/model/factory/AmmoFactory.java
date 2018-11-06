@@ -24,7 +24,7 @@ public class AmmoFactory implements Factory<Ammo> {
     @Override
     public Ammo build() {
         final Vector2 position = Random.getVector(0, Constants.GAME_WIDTH, 0, Constants.GAME_HEIGHT);
-        final Vector2 direction = new Vector2(Random.nextFloat(), Random.nextFloat()).unitary();
+        final Vector2 direction = new Vector2(0, -1);
         final float speed = 0f;
         final int ammo = Random.nextInt(50, 200);
         return new Ammo(position, direction, speed, ammo);

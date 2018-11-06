@@ -38,6 +38,6 @@ public class StarshipFactory implements Factory<Starship> {
         final Queue<Weapon> weapons = new ConcurrentLinkedQueue<>();
         weapons.add(singleWeapon);
         weapons.add(doubleWeapon);
-        return new Starship(position, direction, speed, 500, weapons);
+        return new Starship(position, direction, speed, 800, weapons);
     }
 }
