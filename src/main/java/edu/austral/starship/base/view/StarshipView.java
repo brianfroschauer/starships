@@ -23,11 +23,11 @@ public class StarshipView extends View<Starship> {
         graphics.pushMatrix();
         graphics.text(player.getName() + ": " + player.getScore(),
                 getEntity().getPosition().x() - 25,
-                getEntity().getPosition().y() + 50);
+                getEntity().getPosition().y() + 40);
 
         graphics.text("Life " + getEntity().getLife(),
                 getEntity().getPosition().x() - 25,
-                getEntity().getPosition().y() + 65);
+                getEntity().getPosition().y() + 55);
         graphics.popMatrix();
     }
 }

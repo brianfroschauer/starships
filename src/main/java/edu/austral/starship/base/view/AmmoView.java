@@ -18,8 +18,8 @@ class AmmoView extends View<Ammo> {
     void getRelativeDraw(PGraphics graphics) {
         graphics.pushMatrix();
         graphics.text("Ammo",
-                getEntity().getPosition().x() - 25,
-                getEntity().getPosition().y() + 50);
+                getEntity().getPosition().x() - 20,
+                getEntity().getPosition().y() + 40);
         graphics.popMatrix();
     }
 }
