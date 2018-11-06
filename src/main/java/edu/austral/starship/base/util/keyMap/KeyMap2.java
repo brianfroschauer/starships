@@ -12,10 +12,9 @@ public class KeyMap2 {
 
     public KeyMap getKeyMap() {
         final KeyMap keyMap = new KeyMap();
-        keyMap.put(KeyEvent.VK_2, new MoveUp());
-        keyMap.put(KeyEvent.VK_TAB, new MoveDown());
-        keyMap.put(KeyEvent.VK_1, new MoveLeft());
-        keyMap.put(KeyEvent.VK_3, new MoveRight());
+        keyMap.put(KeyEvent.VK_2, new Accelerate());
+        keyMap.put(KeyEvent.VK_1, new RotateLeft());
+        keyMap.put(KeyEvent.VK_3, new RotateRight());
         keyMap.put(KeyEvent.VK_4, new Shoot());
         keyMap.put(KeyEvent.VK_E, new ChangeWeapon());
         return keyMap;

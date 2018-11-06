@@ -1,7 +1,6 @@
 package edu.austral.starship.base.model.entity;
 
 import edu.austral.starship.base.controller.command.KeyMap;
-import edu.austral.starship.base.util.vector.Vector2;
 
 /**
  * Author: brianfroschauer
@@ -51,19 +50,15 @@ public class Player implements Shooter {
         starship.changeWeapon();
     }
 
-    public void moveUp() {
-        starship.move(new Vector2(0, -1));
+    public void accelerate() {
+        starship.accelerate();
     }
 
-    public void moveDown() {
-        starship.move(new Vector2(0, 1));
+    public void rotateLeft() {
+        starship.rotate(-0.05f);
     }
 
-    public void moveLeft() {
-        starship.move(new Vector2(-1, 0));
-    }
-
-    public void moveRight() {
-        starship.move(new Vector2(1, 0));
+    public void rotateRight() {
+        starship.rotate(0.05f);
     }
 }

@@ -92,9 +92,12 @@ public class Starship extends Entity<Starship> implements Observable, Harmful {
         }
     }
 
-    void move(Vector2 direction) {
-        this.direction = direction;
+    void accelerate() {
         position = position.add(direction.multiply(speed));
+    }
+
+    void rotate(float angle) {
+        direction = direction.rotate(angle);
     }
 
     @Override
